@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "dni": {
+      "type": "biginteger"
+    },
+    "information": {
+      "type": "text"
+    },
+    "consultations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consultation.consultation",
+      "mappedBy": "client"
+    }
+  }
+}

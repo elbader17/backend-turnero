@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultations",
+  "info": {
+    "singularName": "consultation",
+    "pluralName": "consultations",
+    "displayName": "Consultation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "text"
+    },
+    "turn": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::turn.turn",
+      "inversedBy": "consultation"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "consultations"
+    }
+  }
+}

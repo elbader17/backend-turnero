@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dates_useds",
+  "info": {
+    "singularName": "dates-used",
+    "pluralName": "dates-useds",
+    "displayName": "DatesUsed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "professionals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::professional.professional",
+      "inversedBy": "dates_useds"
+    },
+    "turns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::turn.turn",
+      "mappedBy": "dates_used"
+    }
+  }
+}

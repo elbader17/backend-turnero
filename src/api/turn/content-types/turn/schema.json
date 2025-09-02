@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turns",
+  "info": {
+    "singularName": "turn",
+    "pluralName": "turns",
+    "displayName": "Turn"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dates_used": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dates-used.dates-used",
+      "inversedBy": "turns"
+    },
+    "information": {
+      "type": "text"
+    },
+    "consultation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consultation.consultation",
+      "mappedBy": "turn"
+    }
+  }
+}

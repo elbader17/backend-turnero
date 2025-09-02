@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professionals",
+  "info": {
+    "singularName": "professional",
+    "pluralName": "professionals",
+    "displayName": "Professional"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "professional"
+    },
+    "practices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::practice.practice",
+      "mappedBy": "professionals"
+    },
+    "dates_useds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dates-used.dates-used",
+      "mappedBy": "professionals"
+    }
+  }
+}
